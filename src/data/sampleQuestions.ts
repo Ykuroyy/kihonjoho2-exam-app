@@ -1,4 +1,5 @@
 import { Question } from '@/types/exam';
+import { moreQuestions } from './moreQuestions';
 
 export const sampleQuestions: Question[] = [
   // 科目A サンプル問題（60問中の一部）
@@ -223,7 +224,7 @@ const additionalQuestions: Question[] = [
 
 // 実際の試験では科目A：60問、科目B：20問必要なので、豊富な問題データを生成
 export function generateFullExamQuestions(): Question[] {
-  const baseQuestions = [...sampleQuestions, ...additionalQuestions];
+  const baseQuestions = [...sampleQuestions, ...additionalQuestions, ...moreQuestions];
   const questions: Question[] = [...baseQuestions];
   
   // 科目Aの問題テンプレート
