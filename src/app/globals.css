@@ -27,19 +27,37 @@ body {
 
 /* テキストの可読性を強制 */
 * {
-  color: inherit;
+  color: #111827 !important;
 }
 
-.text-gray-800 {
+.text-gray-800, .text-gray-700, .text-gray-600, .text-gray-500 {
   color: #1f2937 !important;
 }
 
-.text-gray-700 {
-  color: #374151 !important;
+/* 背景色の強制 */
+.bg-white {
+  background-color: #ffffff !important;
 }
 
-.text-gray-600 {
-  color: #4b5563 !important;
+/* 特定の色は維持 */
+.text-blue-600 {
+  color: #2563eb !important;
+}
+
+.text-green-600, .text-green-800 {
+  color: #16a34a !important;
+}
+
+.text-red-600, .text-red-800 {
+  color: #dc2626 !important;
+}
+
+.text-orange-600, .text-orange-700 {
+  color: #ea580c !important;
+}
+
+.text-white {
+  color: #ffffff !important;
 }
 
 /* カスタムスタイリング */
