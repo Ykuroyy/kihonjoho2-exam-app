@@ -8,6 +8,7 @@ interface QuestionCardProps {
   onSelectAnswer: (answerIndex: number) => void;
   questionNumber: number;
   totalQuestions: number;
+  isPaused: boolean;
 }
 
 export default function QuestionCard({
@@ -16,6 +17,7 @@ export default function QuestionCard({
   onSelectAnswer,
   questionNumber,
   totalQuestions,
+  isPaused,
 }: QuestionCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
@@ -37,12 +39,13 @@ export default function QuestionCard({
         {question.options.map((option, index) => (
           <button
             key={index}
-            onClick={() => onSelectAnswer(index)}
+            onClick={() => !isPaused && onSelectAnswer(index)}
+            disabled={isPaused}
             className={`option-button w-full p-4 text-left rounded-lg border-2 transition-all ${
               selectedAnswer === index
                 ? 'border-blue-500 bg-blue-50'
                 : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-            }`}
+            } ${isPaused ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             <span className="font-medium mr-2">{index + 1}.</span>
             {option}

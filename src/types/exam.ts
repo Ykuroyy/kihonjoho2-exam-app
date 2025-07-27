@@ -35,4 +35,6 @@ export interface ExamState {
   answers: Map<string, number>;
   startTime: Date | null;
   isCompleted: boolean;
+  isPaused: boolean;
+  pausedTime: number; // 一時停止中の累積時間（ミリ秒）
 }

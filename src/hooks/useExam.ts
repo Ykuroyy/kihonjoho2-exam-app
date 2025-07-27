@@ -8,6 +8,8 @@ export const useExam = (questions: Question[]) => {
     answers: new Map(),
     startTime: null,
     isCompleted: false,
+    isPaused: false,
+    pausedTime: 0,
   });
 
   const startExam = useCallback(() => {
@@ -17,6 +19,22 @@ export const useExam = (questions: Question[]) => {
       currentQuestionIndex: 0,
       answers: new Map(),
       isCompleted: false,
+      isPaused: false,
+      pausedTime: 0,
+    }));
+  }, []);
+
+  const pauseExam = useCallback(() => {
+    setExamState(prev => ({
+      ...prev,
+      isPaused: true,
+    }));
+  }, []);
+
+  const resumeExam = useCallback(() => {
+    setExamState(prev => ({
+      ...prev,
+      isPaused: false,
     }));
   }, []);
 
@@ -103,6 +121,8 @@ export const useExam = (questions: Question[]) => {
   return {
     examState,
     startExam,
+    pauseExam,
+    resumeExam,
     selectAnswer,
     goToQuestion,
     nextQuestion,

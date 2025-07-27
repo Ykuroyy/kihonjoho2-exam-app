@@ -8,6 +8,7 @@ import ExamNavigation from '@/components/ExamNavigation';
 import Timer from '@/components/Timer';
 import ExamResultComponent from '@/components/ExamResult';
 import ExplanationModal from '@/components/ExplanationModal';
+import PauseModal from '@/components/PauseModal';
 import { ExamResult } from '@/types/exam';
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
   const {
     examState,
     startExam,
+    pauseExam,
+    resumeExam,
     selectAnswer,
     goToQuestion,
     nextQuestion,
@@ -106,24 +109,31 @@ export default function Home() {
               onSelectAnswer={(index) => selectAnswer(currentQuestion.id, index)}
               questionNumber={examState.currentQuestionIndex + 1}
               totalQuestions={examState.questions.length}
+              isPaused={examState.isPaused}
             />
           </div>
           
           <div className="space-y-4">
-            <Timer startTime={examState.startTime} />
+            <Timer startTime={examState.startTime} isPaused={examState.isPaused} />
             <ExamNavigation
               currentIndex={examState.currentQuestionIndex}
               totalQuestions={examState.questions.length}
               answeredQuestions={answeredQuestions}
               questions={examState.questions}
+              isPaused={examState.isPaused}
               onGoToQuestion={goToQuestion}
               onPrevious={previousQuestion}
               onNext={nextQuestion}
               onComplete={handleCompleteExam}
+              onPause={pauseExam}
             />
           </div>
         </div>
       </div>
+      
+      {examState.isPaused && (
+        <PauseModal onResume={resumeExam} />
+      )}
     </div>
   );
 }
