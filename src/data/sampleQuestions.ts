@@ -1,5 +1,6 @@
 import { Question } from '@/types/exam';
 import { moreQuestions } from './moreQuestions';
+import { moreBQuestions } from './moreBQuestions';
 
 export const sampleQuestions: Question[] = [
   // 科目A サンプル問題（60問中の一部）
@@ -224,7 +225,7 @@ const additionalQuestions: Question[] = [
 
 // 実際の試験では科目A：60問、科目B：20問必要なので、豊富な問題データを生成
 export function generateFullExamQuestions(): Question[] {
-  const baseQuestions = [...sampleQuestions, ...additionalQuestions, ...moreQuestions];
+  const baseQuestions = [...sampleQuestions, ...additionalQuestions, ...moreQuestions, ...moreBQuestions];
   const questions: Question[] = [...baseQuestions];
   
   // 科目Aの問題テンプレート
@@ -300,24 +301,10 @@ export function generateFullExamQuestions(): Question[] {
     });
   }
   
-  // 科目Bの残り問題を生成
+  // 科目Bの残り問題を生成（既に20問あるので生成不要）
   const categoryBCount = questions.filter(q => q.category === 'B').length;
-  for (let i = categoryBCount + 1; i <= 20; i++) {
-    const template = categoryBTemplates[Math.floor(Math.random() * categoryBTemplates.length)];
-    questions.push({
-      id: `B${String(i).padStart(3, '0')}`,
-      category: 'B',
-      text: `問${i}: ${template.text.replace(/\{[^}]+\}/g, '○○')}`,
-      options: [
-        `O(1) - 定数時間`,
-        `O(n) - 線形時間`,
-        `O(n²) - 二次時間`,
-        `O(log n) - 対数時間`
-      ],
-      correctAnswer: Math.floor(Math.random() * 4),
-      explanation: `${template.explanation}計算量の概念を理解し、適切なアルゴリズムを選択することが重要です。実際の試験ではより具体的なプログラムコードが提示されます。`,
-      topic: template.topic
-    });
+  if (categoryBCount < 20) {
+    console.warn(`科目B問題が不足しています: ${categoryBCount}問`);
   }
   
   return questions;
