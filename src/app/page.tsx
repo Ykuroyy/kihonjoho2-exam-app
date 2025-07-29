@@ -16,6 +16,9 @@ export default function Home() {
   const [examResult, setExamResult] = useState<ExamResult | null>(null);
   const [explanationQuestionId, setExplanationQuestionId] = useState<string | null>(null);
   const [selectedQuestionSetId, setSelectedQuestionSetId] = useState<string>('standard');
+  const [studyMode, setStudyMode] = useState<boolean>(false);
+  const [showFeedback, setShowFeedback] = useState<boolean>(false);
+  const [currentAnswer, setCurrentAnswer] = useState<number | null>(null);
   
   const {
     examState,
@@ -49,6 +52,26 @@ export default function Home() {
   const handleBackToHome = () => {
     setExamResult(null);
     setIsStarted(false);
+    setShowFeedback(false);
+    setCurrentAnswer(null);
+  };
+
+  const handleStudyModeAnswer = (answerIndex: number) => {
+    setCurrentAnswer(answerIndex);
+    selectAnswer(currentQuestion.id, answerIndex);
+    setShowFeedback(true);
+  };
+
+  const handleNextInStudyMode = () => {
+    setShowFeedback(false);
+    setCurrentAnswer(null);
+    if (examState.currentQuestionIndex < examState.questions.length - 1) {
+      nextQuestion();
+    } else {
+      // 学習モード完了
+      const result = completeExam();
+      setExamResult(result);
+    }
   };
   
   const currentQuestion = examState.questions[examState.currentQuestionIndex];
@@ -68,6 +91,40 @@ export default function Home() {
             <span className="text-xl">対策アプリ</span>
           </h1>
           
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold mb-3">学習モードを選択してください</h2>
+            <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center space-x-6">
+                <label className="flex items-center cursor-pointer">
+                  <input
+                    type="radio"
+                    name="mode"
+                    checked={!studyMode}
+                    onChange={() => setStudyMode(false)}
+                    className="w-4 h-4 text-blue-600 mr-2"
+                  />
+                  <div>
+                    <span className="font-medium">試験モード</span>
+                    <p className="text-sm text-gray-600">本番と同じ形式で時間を測って挑戦</p>
+                  </div>
+                </label>
+                <label className="flex items-center cursor-pointer">
+                  <input
+                    type="radio"
+                    name="mode"
+                    checked={studyMode}
+                    onChange={() => setStudyMode(true)}
+                    className="w-4 h-4 text-blue-600 mr-2"
+                  />
+                  <div>
+                    <span className="font-medium">学習モード</span>
+                    <p className="text-sm text-gray-600">1問ずつ解答・解説を確認しながら学習</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-3">問題セットを選択してください</h2>
             <div className="space-y-3">
@@ -135,7 +192,7 @@ export default function Home() {
             onClick={handleStartExam}
             className="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
           >
-            試験を開始する
+            {studyMode ? '学習を開始する' : '試験を開始する'}
           </button>
         </div>
       </div>
@@ -170,28 +227,33 @@ export default function Home() {
           <div className="lg:col-span-3">
             <QuestionCard
               question={currentQuestion}
-              selectedAnswer={examState.answers.get(currentQuestion.id) ?? null}
-              onSelectAnswer={(index) => selectAnswer(currentQuestion.id, index)}
+              selectedAnswer={studyMode ? currentAnswer : (examState.answers.get(currentQuestion.id) ?? null)}
+              onSelectAnswer={studyMode ? handleStudyModeAnswer : (index) => selectAnswer(currentQuestion.id, index)}
               questionNumber={examState.currentQuestionIndex + 1}
               totalQuestions={examState.questions.length}
               isPaused={examState.isPaused}
+              studyMode={studyMode}
+              showFeedback={studyMode && showFeedback}
+              onNextInStudyMode={handleNextInStudyMode}
             />
           </div>
           
           <div className="space-y-4">
-            <Timer startTime={examState.startTime} isPaused={examState.isPaused} />
+            {!studyMode && <Timer startTime={examState.startTime} isPaused={examState.isPaused} />}
             <ExamNavigation
               currentIndex={examState.currentQuestionIndex}
               totalQuestions={examState.questions.length}
               answeredQuestions={answeredQuestions}
               questions={examState.questions}
               isPaused={examState.isPaused}
-              onGoToQuestion={goToQuestion}
-              onPrevious={previousQuestion}
-              onNext={nextQuestion}
-              onComplete={handleCompleteExam}
-              onPause={pauseExam}
+              onGoToQuestion={studyMode ? () => {} : goToQuestion}
+              onPrevious={studyMode ? () => {} : previousQuestion}
+              onNext={studyMode ? () => {} : nextQuestion}
+              onComplete={studyMode ? () => {} : handleCompleteExam}
+              onPause={studyMode ? () => {} : pauseExam}
               onBackToHome={handleBackToHome}
+              studyMode={studyMode}
+              showFeedback={studyMode && showFeedback}
             />
           </div>
         </div>
