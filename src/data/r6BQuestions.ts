@@ -87,7 +87,7 @@ export const r6BQuestions: Question[] = [
     correctAnswer: 3,
     explanation: '無向グラフの隣接行列では、頂点uと頂点vを結ぶ辺がある場合、adjMatrix[u,v]とadjMatrix[v,u]の両方を1に設定する必要があります。',
     topic: 'データ構造',
-    image: '/images/r6b003-graph.svg'
+    image: '/images/r6b003-pdf.png'
   },
   {
     id: 'R6B004',
