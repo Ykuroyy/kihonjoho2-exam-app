@@ -8,6 +8,7 @@ import { r6Questions } from './r6Questions';
 import { r6BQuestions } from './r6BQuestions';
 import { r5Questions } from './r5Questions';
 import { r5BQuestions } from './r5BQuestions';
+import { practiceQuestions } from './practiceQuestions';
 
 export interface QuestionSet {
   id: string;
@@ -54,6 +55,14 @@ export const questionSets: QuestionSet[] = [
     categoryB: r5BQuestions,
     year: '2023',
     isOfficial: true
+  },
+  {
+    id: 'practice',
+    name: '壁打ち問題',
+    description: '1発合格を目指すための基本情報技術者試験対策問題80問（全て科目A形式）',
+    categoryA: practiceQuestions,
+    categoryB: [],
+    isOfficial: false
   },
   {
     id: 'mixed',
