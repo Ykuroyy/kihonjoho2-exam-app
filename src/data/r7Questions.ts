@@ -269,6 +269,7 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: '必要売上高=(固定費+目標利益)÷(1-変動費率)=(300,000+100,000)÷0.8=500,000円。必要客数=500,000÷500=1,000人/月。1日当たり=1,000÷20=50人。1客席当たり=50÷10=5人',
+    image: '/images/r7a019-pdf.png',
     topic: 'ストラテジ'
   },
   {

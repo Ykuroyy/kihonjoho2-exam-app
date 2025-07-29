@@ -242,6 +242,6 @@ A社では、ファイルサーバを次のように運用している。
     correctAnswer: 7,
     explanation: 'RPO72時間から金曜正午の72時間前は火曜正午。木曜正午の障害では土曜フルバックアップ(4時間)+火曜増分(0.25時間)+木曜増分(0.25時間)=4.50時間。ICT継続計画は最高情報セキュリティ責任者(CISO)が承認。',
     topic: 'セキュリティ',
-    images: ['/images/r7b006-1pdf.png', '/images/r7b006-2pdf.png']
+    images: ['/images/r7b006-1pdf.png', '/images/rb006-2pdf.png']
   }
 ];
