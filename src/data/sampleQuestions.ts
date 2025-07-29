@@ -1,6 +1,8 @@
 import { Question } from '@/types/exam';
 import { moreQuestions } from './moreQuestions';
 import { moreBQuestions } from './moreBQuestions';
+import { r7Questions } from './r7Questions';
+import { r7BQuestions } from './r7BQuestions';
 
 // 科目A サンプル問題
 export const sampleQuestionsA: Question[] = [
@@ -230,10 +232,10 @@ const additionalQuestions: Question[] = [
 
 // 実際の試験では科目A：60問、科目B：20問必要なので、豊富な問題データを生成
 export function generateFullExamQuestions(): Question[] {
-  // 科目Aの問題を集約
-  const categoryAQuestions = [...sampleQuestionsA, ...additionalQuestions, ...moreQuestions];
-  // 科目Bの問題を集約
-  const categoryBQuestions = [...sampleQuestionsB, ...moreBQuestions];
+  // 科目Aの問題を集約（令和7年度問題を追加）
+  const categoryAQuestions = [...sampleQuestionsA, ...additionalQuestions, ...moreQuestions, ...r7Questions];
+  // 科目Bの問題を集約（令和7年度問題を追加）
+  const categoryBQuestions = [...sampleQuestionsB, ...moreBQuestions, ...r7BQuestions];
   
   const questions: Question[] = [...categoryAQuestions, ...categoryBQuestions];
   
