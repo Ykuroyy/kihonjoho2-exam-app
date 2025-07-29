@@ -27,7 +27,8 @@ export const r6BQuestions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: '3つの値のうち最大値を返すため、xが最大値となる条件は「x ＞ y and x ＞ z」です。この条件が真の場合にxを返し、偽の場合はyとzの比較に進みます。',
-    topic: 'プログラミング'
+    topic: 'プログラミング',
+    image: '/images/r6b001pdf.png'
   },
   {
     id: 'R6B002',
@@ -54,7 +55,8 @@ export const r6BQuestions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: '2進数を10進数に変換するアルゴリズムです。左から右へ文字を処理しながら、結果を2倍して次のビット値を加算します。「result × 2 ＋ int(binary の i文字目の文字)」が正解です。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r6b002pdf.png'
   },
   {
     id: 'R6B003',
@@ -87,7 +89,7 @@ export const r6BQuestions: Question[] = [
     correctAnswer: 3,
     explanation: '無向グラフの隣接行列では、頂点uと頂点vを結ぶ辺がある場合、adjMatrix[u,v]とadjMatrix[v,u]の両方を1に設定する必要があります。',
     topic: 'データ構造',
-    image: '/images/r6b003-pdf.png'
+    images: ['/images/r6b003-1pdf.png', '/images/r6b003-2pdf.png']
   },
   {
     id: 'R6B004',
@@ -105,7 +107,8 @@ export const r6BQuestions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'merge({2, 3}, {1, 4})の実行において、最初のwhileループでdata2から1が取り出され、次にdata1から2, 3が取り出されます。その後data2に残っている4を処理するため、最後のwhileループ（/*** α ***/の行）は1回実行されます。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    images: ['/images/r6b004-1pdf.png', '/images/r6b004-2pdf.png']
   },
   {
     id: 'R6B005',
@@ -148,7 +151,8 @@ Lxy＝ (Mxy × 全注文数) ÷ (Kx × Ky)
     ],
     correctAnswer: 4,
     explanation: 'コードの構造から、arrayM[i]は商品の同時購入回数、arrayK[i]は各商品の購入回数、全注文数（ordersの要素数）を使って関連度を計算します。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    images: ['/images/r6b005-1pdf.png', '/images/r6b005-2pdf.png', '/images/r6b005-3pdf.png']
   },
   {
     id: 'R6B006',
@@ -169,6 +173,7 @@ Lxy＝ (Mxy × 全注文数) ÷ (Kx × Ky)
     ],
     correctAnswer: 2,
     explanation: '社内ネットワークを経由しない直接接続により不正アクセスのリスクが増加するため、認証を強化する2要素認証の導入が最も適切な対策です。',
-    topic: 'セキュリティ'
+    topic: 'セキュリティ',
+    images: ['/images/r6b006-1pdf.png', '/images/r6b006-2pdf.png']
   }
 ];

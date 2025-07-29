@@ -23,7 +23,8 @@ export const r6Questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'X AND (X □Y)とX OR (X □Y)の値から、X □YはX OR Y（論理和）であることが導かれます。',
-    topic: '基礎理論'
+    topic: '基礎理論',
+    image: '/images/r6a001pdf.png'
   },
   {
     id: 'R6A002',
@@ -37,7 +38,8 @@ export const r6Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ASCIIコードでaは97、iは105で1の位は7と5。bは98、rは114で1の位は8と4。cは99、lは108で1の位は9と8。dは100、xは120で1の位は0と0で衝突します。',
-    topic: 'アルゴリズムとプログラミング'
+    topic: 'アルゴリズムとプログラミング',
+    image: '/images/r6a002-pdf.png'
   },
   {
     id: 'R6A003',
@@ -61,6 +63,7 @@ CPU → キャッシュメモリ（256kバイト） → 主記憶（256Mバイ�
     ],
     correctAnswer: 1,
     explanation: 'ヒット率をhとすると、CPU Xの実効アクセス時間は40h + 400(1-h)、CPU Yは20h + 580(1-h)。これらが等しいとして解くとh = 0.90となります。',
+    image: '/images/r6a003pdf.png'
     topic: 'コンピュータシステム'
   },
   {
