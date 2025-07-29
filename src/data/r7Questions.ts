@@ -41,7 +41,8 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: '2分探索木では、各ノードにおいて、左部分木のすべての値はそのノードの値より小さく、右部分木のすべての値はそのノードの値より大きくなります。',
-    topic: 'アルゴリズムとプログラミング'
+    topic: 'アルゴリズムとプログラミング',
+    image: '/images/r7a003-pdf.png'
   },
   {
     id: 'R7A004',
@@ -83,7 +84,8 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'IN句は、指定した値のいずれかと一致するレコードを抽出します。これはOR条件と同じ意味になります。',
-    topic: 'データベース'
+    topic: 'データベース',
+    image: '/images/r7a006-pdf.png'
   },
   {
     id: 'R7A007',
@@ -195,7 +197,8 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'クリティカルパスを求めると、最長経路が31日となります。',
-    topic: 'プロジェクトマネジメント'
+    topic: 'プロジェクトマネジメント',
+    image: '/images/r7a014-pdf.png'
   },
   {
     id: 'R7A015',
@@ -223,7 +226,8 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'マーケットバスケット分析は、顧客の購買データから、同時に購入される商品の組み合わせ（相関関係）を発見する手法です。',
-    topic: 'ストラテジ'
+    topic: 'ストラテジ',
+    image: '/images/r7a016-pdf.png'
   },
   {
     id: 'R7A017',

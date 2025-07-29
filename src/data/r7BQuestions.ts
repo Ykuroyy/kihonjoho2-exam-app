@@ -43,7 +43,8 @@ export const r7BQuestions: Question[] = [
     ],
     correctAnswer: 5,
     explanation: 'function1はnからmまでの4の倍数の個数をカウントします。function2も同じ結果を返すため、最初のループでtempNを4の倍数まで調整し、2番目のループで4ずつ増やしながらカウントします。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r7b001-pdf.png'
   },
   {
     id: 'R7B002',
@@ -73,7 +74,8 @@ export const r7BQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: '10円玉を使う枚数を増やしながら、残りの金額で5円玉と1円玉の組み合わせを数えます。rest ≧ 0の条件により、10円玉で全額を超えない範囲で処理を続けます。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r7b002-pdf.png'
   },
   {
     id: 'R7B003',
@@ -114,7 +116,8 @@ export const r7BQuestions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: 'スタックの実装で、stackPosは次に値を格納する位置を示します。pushではstackPosの位置に格納してからインクリメント、popではデクリメントしてからその位置の値を取り出します。',
-    topic: 'データ構造'
+    topic: 'データ構造',
+    image: '/images/r7b003-1pdf.png'
   },
   {
     id: 'R7B004',
@@ -160,7 +163,8 @@ export const r7BQuestions: Question[] = [
     ],
     correctAnswer: 7,
     explanation: 'data配列で"abc"のパターンを探索します。i=3とi=6で完全一致し、それぞれ3回ずつ条件が真になります。また、i=1で1回真になった後に不一致で終了。合計8回です。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r7b004-pdf.png'
   },
   {
     id: 'R7B005',
@@ -203,7 +207,8 @@ export const r7BQuestions: Question[] = [
     ],
     correctAnswer: 4,
     explanation: '理論度数は(行の和×列の和)÷全体の和で計算します。予防接種を受けた・かからなかった=(88×140)÷154=80、受けていない・かかった=(66×14)÷154=6',
-    topic: '統計'
+    topic: '統計',
+    image: '/images/r7b005-1-pdf.png'
   },
   {
     id: 'R7B006',
