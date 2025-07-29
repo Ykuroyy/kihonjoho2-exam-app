@@ -2,8 +2,8 @@ import { Question } from '@/types/exam';
 import { moreQuestions } from './moreQuestions';
 import { moreBQuestions } from './moreBQuestions';
 
-export const sampleQuestions: Question[] = [
-  // 科目A サンプル問題（60問中の一部）
+// 科目A サンプル問題
+export const sampleQuestionsA: Question[] = [
   {
     id: 'A001',
     category: 'A',
@@ -73,9 +73,11 @@ export const sampleQuestions: Question[] = [
     correctAnswer: 0,
     explanation: 'WBS（Work Breakdown Structure）は、プロジェクトの成果物や作業を階層的に分解した構造図です。',
     topic: 'マネジメント'
-  },
-  
-  // 科目B サンプル問題（20問中の一部）
+  }
+];
+
+// 科目B サンプル問題
+export const sampleQuestionsB: Question[] = [
   {
     id: 'B001',
     category: 'B',
@@ -147,6 +149,9 @@ export const sampleQuestions: Question[] = [
     topic: 'データベース'
   }
 ];
+
+// 後方互換性のために、結合された配列も提供
+export const sampleQuestions: Question[] = [...sampleQuestionsA, ...sampleQuestionsB];
 
 // 基本情報技術者試験の追加問題データ
 const additionalQuestions: Question[] = [
@@ -225,8 +230,12 @@ const additionalQuestions: Question[] = [
 
 // 実際の試験では科目A：60問、科目B：20問必要なので、豊富な問題データを生成
 export function generateFullExamQuestions(): Question[] {
-  const baseQuestions = [...sampleQuestions, ...additionalQuestions, ...moreQuestions, ...moreBQuestions];
-  const questions: Question[] = [...baseQuestions];
+  // 科目Aの問題を集約
+  const categoryAQuestions = [...sampleQuestionsA, ...additionalQuestions, ...moreQuestions];
+  // 科目Bの問題を集約
+  const categoryBQuestions = [...sampleQuestionsB, ...moreBQuestions];
+  
+  const questions: Question[] = [...categoryAQuestions, ...categoryBQuestions];
   
   // 科目Aの問題テンプレート
   const categoryATemplates = [
@@ -262,24 +271,6 @@ export function generateFullExamQuestions(): Question[] {
     }
   ];
 
-  // 科目Bの問題テンプレート
-  const categoryBTemplates = [
-    {
-      text: '次のソートアルゴリズムの時間計算量について、{algorithm}ソートの最悪時間計算量は何か。',
-      topic: 'アルゴリズム',
-      explanation: 'ソートアルゴリズムには様々な種類があり、それぞれ異なる時間計算量を持ちます。'
-    },
-    {
-      text: 'オブジェクト指向プログラミングにおける{concept}の概念について正しく説明しているものは何か。',
-      topic: 'プログラミング',
-      explanation: 'オブジェクト指向プログラミングの基本概念を理解することが重要です。'
-    },
-    {
-      text: '暗号化技術における{cipher}暗号方式の特徴として正しいものは何か。',
-      topic: 'セキュリティ',
-      explanation: '暗号化技術には様々な方式があり、それぞれに特徴があります。'
-    }
-  ];
   
   // 科目Aの残り問題を生成
   const categoryACount = questions.filter(q => q.category === 'A').length;
