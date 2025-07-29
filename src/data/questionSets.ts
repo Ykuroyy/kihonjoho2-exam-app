@@ -6,6 +6,8 @@ import { r7Questions } from './r7Questions';
 import { r7BQuestions } from './r7BQuestions';
 import { r6Questions } from './r6Questions';
 import { r6BQuestions } from './r6BQuestions';
+import { r5Questions } from './r5Questions';
+import { r5BQuestions } from './r5BQuestions';
 
 export interface QuestionSet {
   id: string;
@@ -45,11 +47,20 @@ export const questionSets: QuestionSet[] = [
     isOfficial: true
   },
   {
+    id: 'r5-official',
+    name: '令和5年度公開問題',
+    description: 'IPAが公開した令和5年度基本情報技術者試験の実際の問題（科目A: 20問、科目B: 6問）',
+    categoryA: r5Questions,
+    categoryB: r5BQuestions,
+    year: '2023',
+    isOfficial: true
+  },
+  {
     id: 'mixed',
     name: '全問題ミックス',
-    description: '標準問題と令和6年度・令和7年度問題を組み合わせた総合問題セット',
-    categoryA: [...sampleQuestionsA, ...additionalQuestions, ...moreQuestions, ...r6Questions, ...r7Questions],
-    categoryB: [...sampleQuestionsB, ...moreBQuestions, ...r6BQuestions, ...r7BQuestions],
+    description: '標準問題と令和5年度・令和6年度・令和7年度問題を組み合わせた総合問題セット',
+    categoryA: [...sampleQuestionsA, ...additionalQuestions, ...moreQuestions, ...r5Questions, ...r6Questions, ...r7Questions],
+    categoryB: [...sampleQuestionsB, ...moreBQuestions, ...r5BQuestions, ...r6BQuestions, ...r7BQuestions],
     isOfficial: false
   }
 ];
