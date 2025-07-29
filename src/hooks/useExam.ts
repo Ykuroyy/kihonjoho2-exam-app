@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import { Question, ExamState, ExamResult } from '@/types/exam';
 
-export const useExam = (questions: Question[]) => {
+export const useExam = (initialQuestions: Question[] = []) => {
   const [examState, setExamState] = useState<ExamState>({
-    questions,
+    questions: initialQuestions,
     currentQuestionIndex: 0,
     answers: new Map(),
     startTime: null,
@@ -12,9 +12,10 @@ export const useExam = (questions: Question[]) => {
     pausedTime: 0,
   });
 
-  const startExam = useCallback(() => {
+  const startExam = useCallback((questions?: Question[]) => {
     setExamState(prev => ({
       ...prev,
+      questions: questions || prev.questions,
       startTime: new Date(),
       currentQuestionIndex: 0,
       answers: new Map(),

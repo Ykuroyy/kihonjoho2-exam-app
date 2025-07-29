@@ -156,7 +156,7 @@ export const sampleQuestionsB: Question[] = [
 export const sampleQuestions: Question[] = [...sampleQuestionsA, ...sampleQuestionsB];
 
 // 基本情報技術者試験の追加問題データ
-const additionalQuestions: Question[] = [
+export const additionalQuestions: Question[] = [
   // 科目A 追加問題
   {
     id: 'A006',
