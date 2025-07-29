@@ -6,6 +6,7 @@ export interface Question {
   correctAnswer: number;
   explanation: string;
   topic: string;
+  image?: string; // 問題に関連する画像のパス（オプショナル）
 }
 
 export interface ExamResult {

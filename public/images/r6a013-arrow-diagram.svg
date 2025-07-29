@@ -1,0 +1,81 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="400" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  
+  <!-- タイトル -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">アローダイアグラム</text>
+  
+  <!-- ノード（イベント） -->
+  <circle cx="50" cy="200" r="20" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="50" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">開始</text>
+  
+  <circle cx="200" cy="150" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="200" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1</text>
+  
+  <circle cx="200" cy="250" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="200" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2</text>
+  
+  <circle cx="350" cy="150" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="350" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">3</text>
+  
+  <circle cx="350" cy="250" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="350" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">4</text>
+  
+  <circle cx="500" cy="150" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="500" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">5</text>
+  
+  <circle cx="500" cy="250" r="20" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="500" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">6</text>
+  
+  <circle cx="650" cy="200" r="20" fill="#e8f5e8" stroke="#388e3c" stroke-width="2"/>
+  <text x="650" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">終了</text>
+  
+  <!-- 矢印（作業） -->
+  <!-- A: 30日 -->
+  <line x1="70" y1="190" x2="180" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="125" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">A (30日)</text>
+  
+  <!-- B: 5日 -->
+  <line x1="70" y1="210" x2="180" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="125" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">B (5日)</text>
+  
+  <!-- C: 30日 -->
+  <line x1="220" y1="150" x2="330" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">C (30日)</text>
+  
+  <!-- D: 20日 -->
+  <line x1="220" y1="250" x2="330" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">D (20日)</text>
+  
+  <!-- E: 40日 -->
+  <line x1="220" y1="160" x2="330" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">E (40日)</text>
+  
+  <!-- F: 25日 -->
+  <line x1="370" y1="150" x2="480" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="425" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">F (25日)</text>
+  
+  <!-- G: 30日 -->
+  <line x1="370" y1="250" x2="480" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="425" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">G (30日)</text>
+  
+  <!-- H: 30日 (F→終了) -->
+  <line x1="520" y1="160" x2="630" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="575" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">H (30日)</text>
+  
+  <!-- H: 30日 (G→終了) -->
+  <line x1="520" y1="240" x2="630" y2="210" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="575" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d32f2f">H (30日)</text>
+  
+  <!-- クリティカルパスの説明 -->
+  <text x="50" y="350" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d32f2f">クリティカルパス (最長経路): A→C→F→H = 30+30+25+30 = 115日</text>
+  <text x="50" y="370" font-family="Arial, sans-serif" font-size="14" fill="#666">または B→E→G→H = 5+40+30+30 = 105日</text>
+  <text x="50" y="390" font-family="Arial, sans-serif" font-size="14" fill="#d32f2f">実際の最短完了時間: 120日</text>
+</svg>

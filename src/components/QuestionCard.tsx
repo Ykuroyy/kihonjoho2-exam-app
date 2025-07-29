@@ -39,6 +39,17 @@ export default function QuestionCard({
         <h2 className="text-lg font-semibold text-gray-800">
           {question.text}
         </h2>
+        
+        {question.image && (
+          <div className="mt-4">
+            <img 
+              src={question.image} 
+              alt="問題図"
+              className="max-w-full h-auto border border-gray-300 rounded-lg shadow-sm"
+              style={{ maxHeight: '400px' }}
+            />
+          </div>
+        )}
       </div>
       
       <div className="space-y-3">

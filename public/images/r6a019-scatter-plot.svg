@@ -1,0 +1,54 @@
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="500" height="400" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1"/>
+  
+  <!-- タイトル -->
+  <text x="250" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">散布図</text>
+  
+  <!-- Y軸 -->
+  <line x1="60" y1="350" x2="60" y2="60" stroke="#333" stroke-width="2"/>
+  <polygon points="60,60 55,70 65,70" fill="#333"/>
+  
+  <!-- X軸 -->
+  <line x1="60" y1="350" x2="450" y2="350" stroke="#333" stroke-width="2"/>
+  <polygon points="450,350 440,345 440,355" fill="#333"/>
+  
+  <!-- 軸ラベル -->
+  <text x="25" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" transform="rotate(-90, 25, 200)">y軸（品質特性の値）</text>
+  <text x="250" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">x軸（要因の値）</text>
+  
+  <!-- グリッド線 -->
+  <defs>
+    <pattern id="grid" width="40" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 30" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="60" y="60" width="390" height="290" fill="url(#grid)"/>
+  
+  <!-- データポイント（負の相関を示すように配置） -->
+  <circle cx="90" cy="100" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="120" cy="120" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="140" cy="130" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="160" cy="150" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="180" cy="170" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="200" cy="190" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="220" cy="210" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="240" cy="220" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="260" cy="240" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="280" cy="250" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="300" cy="270" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="320" cy="290" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="340" cy="300" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="360" cy="310" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="380" cy="320" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  <circle cx="400" cy="330" r="4" fill="#2196f3" stroke="#1976d2" stroke-width="1"/>
+  
+  <!-- 回帰直線（おおよその負の相関を示す） -->
+  <line x1="80" y1="90" x2="410" y2="340" stroke="#f44336" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- 原点のラベル -->
+  <text x="45" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="12">0</text>
+  
+  <!-- 説明テキスト -->
+  <text x="250" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">右下がりの傾向（負の相関）</text>
+</svg>
