@@ -63,7 +63,7 @@ CPU → キャッシュメモリ（256kバイト） → 主記憶（256Mバイ�
     ],
     correctAnswer: 1,
     explanation: 'ヒット率をhとすると、CPU Xの実効アクセス時間は40h + 400(1-h)、CPU Yは20h + 580(1-h)。これらが等しいとして解くとh = 0.90となります。',
-    image: '/images/r6a003pdf.png'
+    image: '/images/r6a003pdf.png',
     topic: 'コンピュータシステム'
   },
   {
