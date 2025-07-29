@@ -7,6 +7,7 @@ interface ExamResultProps {
   questions: Question[];
   onShowExplanation: (questionId: string) => void;
   onRetakeExam: () => void;
+  onBackToHome: () => void;
 }
 
 export default function ExamResultComponent({
@@ -14,6 +15,7 @@ export default function ExamResultComponent({
   questions,
   onShowExplanation,
   onRetakeExam,
+  onBackToHome,
 }: ExamResultProps) {
   const timeTaken = Math.floor(
     (result.endTime.getTime() - result.startTime.getTime()) / 1000
@@ -80,12 +82,18 @@ export default function ExamResultComponent({
           {seconds.toString().padStart(2, '0')}
         </div>
         
-        <div className="flex justify-center">
+        <div className="flex justify-center space-x-4">
           <button
             onClick={onRetakeExam}
             className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700"
           >
             もう一度挑戦する
+          </button>
+          <button
+            onClick={onBackToHome}
+            className="px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700"
+          >
+            トップ画面に戻る
           </button>
         </div>
       </div>

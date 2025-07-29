@@ -11,6 +11,7 @@ interface ExamNavigationProps {
   onNext: () => void;
   onComplete: () => void;
   onPause: () => void;
+  onBackToHome: () => void;
 }
 
 export default function ExamNavigation({
@@ -24,6 +25,7 @@ export default function ExamNavigation({
   onNext,
   onComplete,
   onPause,
+  onBackToHome,
 }: ExamNavigationProps) {
   const categoryAQuestions = questions.filter(q => q.category === 'A');
   const categoryBQuestions = questions.filter(q => q.category === 'B');
@@ -89,13 +91,19 @@ export default function ExamNavigation({
         </div>
       </div>
       
-      <div className="mb-4">
+      <div className="mb-4 space-y-2">
         <button
           onClick={onPause}
           disabled={isPaused}
           className="w-full py-2 text-sm font-medium text-orange-700 bg-orange-100 rounded-md hover:bg-orange-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPaused ? '一時停止中' : '一時停止'}
+        </button>
+        <button
+          onClick={onBackToHome}
+          className="w-full py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+        >
+          トップ画面に戻る
         </button>
       </div>
       

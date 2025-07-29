@@ -45,6 +45,11 @@ export default function Home() {
     setExamResult(null);
     setIsStarted(false);
   };
+
+  const handleBackToHome = () => {
+    setExamResult(null);
+    setIsStarted(false);
+  };
   
   const currentQuestion = examState.questions[examState.currentQuestionIndex];
   const answeredQuestions = new Set(
@@ -145,6 +150,7 @@ export default function Home() {
           questions={examState.questions}
           onShowExplanation={setExplanationQuestionId}
           onRetakeExam={handleRetakeExam}
+          onBackToHome={handleBackToHome}
         />
         {explanationQuestionId && (
           <ExplanationModal
@@ -185,6 +191,7 @@ export default function Home() {
               onNext={nextQuestion}
               onComplete={handleCompleteExam}
               onPause={pauseExam}
+              onBackToHome={handleBackToHome}
             />
           </div>
         </div>
