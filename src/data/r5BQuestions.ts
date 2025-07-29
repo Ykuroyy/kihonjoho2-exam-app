@@ -35,7 +35,8 @@ export const r5BQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: '素数判定アルゴリズムでは、2からmaxNumまでの数値を調べ(a=maxNum)、各数値iが他の数値jで割り切れるかを確認します(b=i ÷ j の余り が 0 と等しい)。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r5b001-pdf.png'
   },
   {
     id: 'R5B002',
@@ -68,7 +69,8 @@ export const r5BQuestions: Question[] = [
     ],
     correctAnswer: 6,
     explanation: 'proc2()を実行すると、最初にproc3()が呼ばれて"C"を出力、次に"B"を出力、最後にproc1()が呼ばれて"A"を出力し、proc1()内のproc3()は実行されないため、"C", "B", "A"の順で出力されます。',
-    topic: 'プログラミング'
+    topic: 'プログラミング',
+    image: '/images/r5b002-pdf.png'
   },
   {
     id: 'R5B003',
@@ -114,7 +116,8 @@ export const r5BQuestions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'クイックソートアルゴリズムで、初期配列{2,1,3,5,4}、pivot=3として1回目の分割処理後、/*** α ***/行で出力される配列は"2 1 3 5 4"となります。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    image: '/images/r5b003-pdf.png'
   },
   {
     id: 'R5B004',
@@ -162,7 +165,8 @@ export const r5BQuestions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ハッシュテーブルへの挿入処理で、add(3)で位置4に3を格納、add(18)で位置4が使用済みなので位置2に18を格納、add(11)で位置2が使用済みなので位置5に11を格納し、結果は{－1, 18, －1, 3, 11}となります。',
-    topic: 'データ構造'
+    topic: 'データ構造',
+    image: '/images/r5b004-pdf.png'
   },
   {
     id: 'R5B005',
@@ -205,7 +209,8 @@ return similarity`,
     ],
     correctAnswer: 0,
     explanation: 'コサイン類似度の計算では、分子は各要素の積の和なので a=vector1[i] × vector2[i]、分母は両ベクトルのノルムの積なので b=denominator × (tempの正の平方根) となります。',
-    topic: 'アルゴリズム'
+    topic: 'アルゴリズム',
+    images: ['/images/r5b005-1-pdf.png', '/images/r5b005-2-pdf.png']
   },
   {
     id: 'R5B006',
@@ -242,6 +247,7 @@ A社は，C社と業務委託契約を締結する前に，秘密保持契約を
     ],
     correctAnswer: 0,
     explanation: '初期設定情報が公開されているため、攻撃者が同じ差出人アドレスや件名を使って偽装メールを送信し、従業員がそれを複合機からの正当なメールと誤認してフィッシング攻撃に遭うリスクがあります。',
-    topic: 'セキュリティ'
+    topic: 'セキュリティ',
+    images: ['/images/r5b006-1pdf.png', '/images/r5b006-2pdf.png']
   }
 ];

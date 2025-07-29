@@ -117,7 +117,7 @@ export const r7BQuestions: Question[] = [
     correctAnswer: 1,
     explanation: 'スタックの実装で、stackPosは次に値を格納する位置を示します。pushではstackPosの位置に格納してからインクリメント、popではデクリメントしてからその位置の値を取り出します。',
     topic: 'データ構造',
-    image: '/images/r7b003-1pdf.png'
+    images: ['/images/r7b003-1pdf.png', '/images/r7b003-2pdf.png']
   },
   {
     id: 'R7B004',
@@ -208,7 +208,7 @@ export const r7BQuestions: Question[] = [
     correctAnswer: 4,
     explanation: '理論度数は(行の和×列の和)÷全体の和で計算します。予防接種を受けた・かからなかった=(88×140)÷154=80、受けていない・かかった=(66×14)÷154=6',
     topic: '統計',
-    image: '/images/r7b005-1-pdf.png'
+    images: ['/images/r7b005-1-pdf.png', '/images/r7b005-2-pdf.png']
   },
   {
     id: 'R7B006',
@@ -241,6 +241,7 @@ A社では、ファイルサーバを次のように運用している。
     ],
     correctAnswer: 7,
     explanation: 'RPO72時間から金曜正午の72時間前は火曜正午。木曜正午の障害では土曜フルバックアップ(4時間)+火曜増分(0.25時間)+木曜増分(0.25時間)=4.50時間。ICT継続計画は最高情報セキュリティ責任者(CISO)が承認。',
-    topic: 'セキュリティ'
+    topic: 'セキュリティ',
+    images: ['/images/r7b006-1pdf.png', '/images/r7b006-2pdf.png']
   }
 ];

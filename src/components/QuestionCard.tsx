@@ -40,7 +40,8 @@ export default function QuestionCard({
           {question.text}
         </h2>
         
-        {question.image && (
+        {/* 単一画像の表示 */}
+        {question.image && !question.images && (
           <div className="mt-4">
             <img 
               src={question.image} 
@@ -48,6 +49,22 @@ export default function QuestionCard({
               className="max-w-full h-auto border border-gray-300 rounded-lg shadow-sm"
               style={{ maxHeight: '400px' }}
             />
+          </div>
+        )}
+        
+        {/* 複数画像の表示 */}
+        {question.images && question.images.length > 0 && (
+          <div className="mt-4 space-y-4">
+            {question.images.map((imagePath, index) => (
+              <div key={index}>
+                <img 
+                  src={imagePath} 
+                  alt={`問題図 ${index + 1}`}
+                  className="max-w-full h-auto border border-gray-300 rounded-lg shadow-sm"
+                  style={{ maxHeight: '400px' }}
+                />
+              </div>
+            ))}
           </div>
         )}
       </div>

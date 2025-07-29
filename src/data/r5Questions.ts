@@ -18,7 +18,7 @@ export const r5Questions: Question[] = [
   {
     id: 'R5A002',
     category: 'A',
-    text: `双方向のポインタをもつリスト構造において、図1のデータに従業員Gのデータを従業員Aと従業員Kの間に追加する。このとき変更が必要なポインタはどれか。`,
+    text: `双方向のポインタをもつリスト構造のデータを表に示す。この表において新たな社員Gを社員Aと社員Kの間に追加する。追加後の表のポインタa～fの中で追加前と比べて値が変わるポインタだけを全て列記したものはどれか。`,
     options: [
       'a, b, e, f',
       'a, e, f',
@@ -27,7 +27,8 @@ export const r5Questions: Question[] = [
     ],
     correctAnswer: 1,
     explanation: '双方向リストでGをAとKの間に挿入する場合、Aの次ポインタ(a)、Kの前ポインタ(e)、Gの前後ポインタ(f)を変更する必要があります。',
-    topic: 'アルゴリズムとプログラミング'
+    topic: 'アルゴリズムとプログラミング',
+    image: '/images/r5a002-pdf.png'
   },
   {
     id: 'R5A003',
@@ -130,7 +131,7 @@ export const r5Questions: Question[] = [
   {
     id: 'R5A010',
     category: 'A',
-    text: `図に示すような構成において、WAFの設置場所として最も適切な箇所はどれか。`,
+    text: `図のような構成と通信サービスのシステムにおいて、Webアプリケーションの脆弱性対策のためのWAFの設置場所として、最も適切な箇所はどこか。ここで、WAFには通信を暗号化したり、復号したりする機能はないものとする。`,
     options: [
       'a',
       'b',
@@ -139,21 +140,23 @@ export const r5Questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: 'WAF（Web Application Firewall）は、外部からの不正なHTTPリクエストを検知・遮断するため、インターネットとWebサーバの間（位置c）に設置するのが最も効果的です。',
-    topic: 'セキュリティ'
+    topic: 'セキュリティ',
+    image: '/images/r5a010-pdf.png'
   },
   {
     id: 'R5A011',
     category: 'A',
-    text: `図のフローチャートにおいて、変数mの初期値を8、変数nの初期値を12としたとき、実行終了後のmとnの関係はどれか。`,
+    text: `図のフローチャートにおいて、変数aの初期値を8、変数bの初期値を12としたとき、実行終了後のaとbの関係はどれか。`,
     options: [
-      'm = n',
-      '2m = n',
-      '3m = n',
-      '3m = 2n'
+      'a = b',
+      '2a = b',
+      '3a = b',
+      '3a = 2b'
     ],
     correctAnswer: 3,
-    explanation: 'フローチャートの処理をトレースすると、最終的にm=4、n=12となり、3m = 2nの関係が成り立ちます。',
-    topic: 'アルゴリズムとプログラミング'
+    explanation: 'フローチャートの処理をトレースすると、最終的にa=4、b=12となり、3a = 2bの関係が成り立ちます。',
+    topic: 'アルゴリズムとプログラミング',
+    image: '/images/r5a011-pdf.png'
   },
   {
     id: 'R5A012',
@@ -172,7 +175,7 @@ export const r5Questions: Question[] = [
   {
     id: 'R5A013',
     category: 'A',
-    text: `図のプロジェクトにおいて、プロジェクト全体の期間を最も短縮できる作業はどれか。`,
+    text: `図に示すとおりに作業を実施する予定であったが、作業Aで1日の遅れが生じた。各作業の費用増加率を表の値とするとき、当初の予定日数で終了するために掛かる増加費用を最も少なくするには、どの作業を短縮すべきか。ここで、費用増加率とは、作業を1日短縮するために要する増加費用のことである。`,
     options: [
       'A',
       'B',
@@ -180,8 +183,9 @@ export const r5Questions: Question[] = [
       'E'
     ],
     correctAnswer: 3,
-    explanation: 'クリティカルパス上にある作業Eを短縮することで、プロジェクト全体の期間を最も効果的に短縮できます。',
-    topic: 'プロジェクトマネジメント'
+    explanation: '作業Aの1日遅れを回復するため、クリティカルパス上の作業の中で費用増加率が最も低い作業Eを短縮することで、最も経済的に当初予定を達成できます。',
+    topic: 'プロジェクトマネジメント',
+    image: '/images/r5a013-pdf.png'
   },
   {
     id: 'R5A014',
