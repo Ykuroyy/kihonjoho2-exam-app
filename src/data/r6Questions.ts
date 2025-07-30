@@ -38,8 +38,7 @@ export const r6Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'ASCIIコードでaは97、iは105で1の位は7と5。bは98、rは114で1の位は8と4。cは99、lは108で1の位は9と8。dは100、xは120で1の位は0と0で衝突します。',
-    topic: 'アルゴリズムとプログラミング',
-    image: '/images/r6a002-pdf.png'
+    topic: 'アルゴリズムとプログラミング'
   },
   {
     id: 'R6A003',
