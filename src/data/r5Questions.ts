@@ -28,7 +28,7 @@ export const r5Questions: Question[] = [
     correctAnswer: 1,
     explanation: '双方向リストでGをAとKの間に挿入する場合、Aの次ポインタ(a)、Kの前ポインタ(e)、Gの前後ポインタ(f)を変更する必要があります。',
     topic: 'アルゴリズムとプログラミング',
-    image: '/images/r5a002-pdf.png'
+    image: '/images/r5a002pdf.png'
   },
   {
     id: 'R5A003',
