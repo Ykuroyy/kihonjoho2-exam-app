@@ -226,8 +226,7 @@ export const r7Questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: 'マーケットバスケット分析は、顧客の購買データから、同時に購入される商品の組み合わせ（相関関係）を発見する手法です。',
-    topic: 'ストラテジ',
-    image: '/images/r7a016-pdf.png'
+    topic: 'ストラテジ'
   },
   {
     id: 'R7A017',
