@@ -36,7 +36,7 @@ export const r5BQuestions: Question[] = [
     correctAnswer: 0,
     explanation: '素数判定アルゴリズムでは、2からmaxNumまでの数値を調べ(a=maxNum)、各数値iが他の数値jで割り切れるかを確認します(b=i ÷ j の余り が 0 と等しい)。',
     topic: 'アルゴリズム',
-    image: '/images/r5b001-pdf.png'
+    images: ['/images/r5b001-pdf.png']
   },
   {
     id: 'R5B002',
@@ -70,7 +70,7 @@ export const r5BQuestions: Question[] = [
     correctAnswer: 6,
     explanation: 'proc2()を実行すると、最初にproc3()が呼ばれて"C"を出力、次に"B"を出力、最後にproc1()が呼ばれて"A"を出力し、proc1()内のproc3()は実行されないため、"C", "B", "A"の順で出力されます。',
     topic: 'プログラミング',
-    image: '/images/r5b002-pdf.png'
+    images: ['/images/r5b002-pdf.png']
   },
   {
     id: 'R5B003',
@@ -117,7 +117,7 @@ export const r5BQuestions: Question[] = [
     correctAnswer: 3,
     explanation: 'クイックソートアルゴリズムで、初期配列{2,1,3,5,4}、pivot=3として1回目の分割処理後、/*** α ***/行で出力される配列は"2 1 3 5 4"となります。',
     topic: 'アルゴリズム',
-    image: '/images/r5b003-pdf.png'
+    images: ['/images/r5b003-pdf.png']
   },
   {
     id: 'R5B004',
@@ -166,7 +166,7 @@ export const r5BQuestions: Question[] = [
     correctAnswer: 3,
     explanation: 'ハッシュテーブルへの挿入処理で、add(3)で位置4に3を格納、add(18)で位置4が使用済みなので位置2に18を格納、add(11)で位置2が使用済みなので位置5に11を格納し、結果は{－1, 18, －1, 3, 11}となります。',
     topic: 'データ構造',
-    image: '/images/r5b004-pdf.png'
+    images: ['/images/r5b004-pdf.png']
   },
   {
     id: 'R5B005',
