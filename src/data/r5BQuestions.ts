@@ -210,7 +210,7 @@ return similarity`,
     correctAnswer: 0,
     explanation: 'コサイン類似度の計算では、分子は各要素の積の和なので a=vector1[i] × vector2[i]、分母は両ベクトルのノルムの積なので b=denominator × (tempの正の平方根) となります。',
     topic: 'アルゴリズム',
-    images: ['/images/r5b005-1-pdf.png', '/images/r5b005-2-pdf.png']
+    images: ['/images/r5b005-1pdf.png', '/images/r5b005-2pdf.png']
   },
   {
     id: 'R5B006',
