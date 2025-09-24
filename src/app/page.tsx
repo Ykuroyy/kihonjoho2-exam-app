@@ -75,6 +75,7 @@ export default function Home() {
   };
 
   const handleGoToQuestionInStudyMode = (index: number) => {
+    console.log('handleGoToQuestionInStudyMode called with index:', index);
     // 学習モードで問題を移動する際の状態リセット
     setShowFeedback(false);
     goToQuestion(index);

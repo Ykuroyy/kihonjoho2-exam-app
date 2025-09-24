@@ -75,7 +75,12 @@ export default function ExamNavigation({
             return (
               <button
                 key={q.id}
-                onClick={() => onGoToQuestion(questionIndex)}
+                onClick={(e) => {
+                  console.log('科目A Button clicked:', idx + 1, 'questionIndex:', questionIndex);
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onGoToQuestion(questionIndex);
+                }}
                 className={`
                   w-8 h-8 text-xs font-medium rounded transition-colors cursor-pointer
                   ${isCurrentQuestion
@@ -104,7 +109,12 @@ export default function ExamNavigation({
             return (
               <button
                 key={q.id}
-                onClick={() => onGoToQuestion(questionIndex)}
+                onClick={(e) => {
+                  console.log('科目B Button clicked:', idx + 1, 'questionIndex:', questionIndex);
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onGoToQuestion(questionIndex);
+                }}
                 className={`
                   w-8 h-8 text-xs font-medium rounded transition-colors cursor-pointer
                   ${isCurrentQuestion

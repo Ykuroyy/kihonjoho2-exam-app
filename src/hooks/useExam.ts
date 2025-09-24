@@ -51,21 +51,44 @@ export const useExam = (initialQuestions: Question[] = []) => {
   }, []);
 
   const goToQuestion = useCallback((index: number) => {
-    if (index >= 0 && index < examState.questions.length) {
-      setExamState(prev => ({
-        ...prev,
-        currentQuestionIndex: index,
-      }));
-    }
-  }, [examState.questions.length]);
+    setExamState(prev => {
+      if (index >= 0 && index < prev.questions.length) {
+        console.log('goToQuestion: Navigating to question index:', index);
+        return {
+          ...prev,
+          currentQuestionIndex: index,
+        };
+      }
+      console.log('goToQuestion: Invalid index:', index, 'questions.length:', prev.questions.length);
+      return prev;
+    });
+  }, []);
 
   const nextQuestion = useCallback(() => {
-    goToQuestion(examState.currentQuestionIndex + 1);
-  }, [examState.currentQuestionIndex, goToQuestion]);
+    setExamState(prev => {
+      const nextIndex = prev.currentQuestionIndex + 1;
+      if (nextIndex < prev.questions.length) {
+        return {
+          ...prev,
+          currentQuestionIndex: nextIndex,
+        };
+      }
+      return prev;
+    });
+  }, []);
 
   const previousQuestion = useCallback(() => {
-    goToQuestion(examState.currentQuestionIndex - 1);
-  }, [examState.currentQuestionIndex, goToQuestion]);
+    setExamState(prev => {
+      const prevIndex = prev.currentQuestionIndex - 1;
+      if (prevIndex >= 0) {
+        return {
+          ...prev,
+          currentQuestionIndex: prevIndex,
+        };
+      }
+      return prev;
+    });
+  }, []);
 
   const completeExam = useCallback((): ExamResult => {
     const endTime = new Date();
