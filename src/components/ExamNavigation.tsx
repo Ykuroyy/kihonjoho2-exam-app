@@ -39,8 +39,13 @@ export default function ExamNavigation({
       <div className="mb-4">
         <h3 className="text-sm font-semibold text-gray-700 mb-2">進捗状況</h3>
         {studyMode ? (
-          <div className="text-sm text-gray-600">
-            現在の問題: {currentIndex + 1} / {totalQuestions}
+          <div>
+            <div className="text-sm text-gray-600">
+              現在の問題: {currentIndex + 1} / {totalQuestions}
+            </div>
+            <div className="text-xs text-blue-600 mt-1">
+              💡 問題番号をクリックして自由に移動できます
+            </div>
           </div>
         ) : (
           <div className="text-sm text-gray-600">
@@ -66,22 +71,18 @@ export default function ExamNavigation({
             const questionIndex = questions.findIndex(question => question.id === q.id);
             const isCurrentQuestion = questionIndex === currentIndex;
             const isAnswered = answeredQuestions.has(q.id);
-            const isAccessible = !studyMode || questionIndex <= currentIndex;
             
             return (
               <button
                 key={q.id}
-                onClick={() => isAccessible && onGoToQuestion(questionIndex)}
-                disabled={studyMode && questionIndex > currentIndex}
+                onClick={() => onGoToQuestion(questionIndex)}
                 className={`
-                  w-8 h-8 text-xs font-medium rounded
+                  w-8 h-8 text-xs font-medium rounded transition-colors cursor-pointer
                   ${isCurrentQuestion
                     ? 'bg-blue-600 text-white'
                     : isAnswered
                     ? 'bg-green-100 text-green-800 hover:bg-green-200'
-                    : isAccessible
-                    ? 'bg-gray-100 hover:bg-gray-200'
-                    : 'bg-gray-50 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-100 hover:bg-gray-200'
                   }
                 `}
               >
@@ -99,22 +100,18 @@ export default function ExamNavigation({
             const questionIndex = questions.findIndex(question => question.id === q.id);
             const isCurrentQuestion = questionIndex === currentIndex;
             const isAnswered = answeredQuestions.has(q.id);
-            const isAccessible = !studyMode || questionIndex <= currentIndex;
             
             return (
               <button
                 key={q.id}
-                onClick={() => isAccessible && onGoToQuestion(questionIndex)}
-                disabled={studyMode && questionIndex > currentIndex}
+                onClick={() => onGoToQuestion(questionIndex)}
                 className={`
-                  w-8 h-8 text-xs font-medium rounded
+                  w-8 h-8 text-xs font-medium rounded transition-colors cursor-pointer
                   ${isCurrentQuestion
                     ? 'bg-blue-600 text-white'
                     : isAnswered
                     ? 'bg-green-100 text-green-800 hover:bg-green-200'
-                    : isAccessible
-                    ? 'bg-gray-100 hover:bg-gray-200'
-                    : 'bg-gray-50 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-100 hover:bg-gray-200'
                   }
                 `}
               >

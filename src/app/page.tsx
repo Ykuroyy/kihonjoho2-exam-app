@@ -73,6 +73,16 @@ export default function Home() {
       setExamResult(result);
     }
   };
+
+  const handleGoToQuestionInStudyMode = (index: number) => {
+    // 学習モードで問題を移動する際の状態リセット
+    setShowFeedback(false);
+    goToQuestion(index);
+    // 移動先の問題で既に回答済みの場合は、その回答を表示
+    const targetQuestion = examState.questions[index];
+    const existingAnswer = examState.answers.get(targetQuestion.id);
+    setCurrentAnswer(existingAnswer ?? null);
+  };
   
   const currentQuestion = examState.questions[examState.currentQuestionIndex];
   const answeredQuestions = new Set(
@@ -246,7 +256,7 @@ export default function Home() {
               answeredQuestions={answeredQuestions}
               questions={examState.questions}
               isPaused={examState.isPaused}
-              onGoToQuestion={studyMode ? () => {} : goToQuestion}
+              onGoToQuestion={studyMode ? handleGoToQuestionInStudyMode : goToQuestion}
               onPrevious={studyMode ? () => {} : previousQuestion}
               onNext={studyMode ? () => {} : nextQuestion}
               onComplete={studyMode ? () => {} : handleCompleteExam}
